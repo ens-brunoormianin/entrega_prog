@@ -1,0 +1,149 @@
+:root{
+    --margem: 30px;
+    --borda: 3px solid white;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0 var(--margem);
+    font-family: Arial, sans-serif;
+}
+#head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+}
+.imagem{
+    height: 80px;
+    width: 80px;
+}
+.info{
+    font-size: 90px;
+    margin: 0;
+}
+.ajuda{
+    font-size: 30px;
+    margin: 0;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 40px;
+    background-color: rgb(255, 36, 36);
+}
+.menu a{
+    color: white;
+    text-decoration: none;
+}
+.menu a:hover{
+    text-decoration: underline;
+}
+.conteudo{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 20px 0;
+    padding: 30px;
+    min-height: 300px;
+}
+.destaque{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: var(--borda);
+}
+.texto{
+    flex: 1;
+    text-align: center;
+}
+.rodape{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+    margin-bottom: 20px;
+    border: var(--borda);
+}
+.rodape a{
+    color: white;
+    text-decoration: none;
+}
+.rodape a:hover{
+    text-decoration: underline;
+}
+.servicos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--margem);
+    font-size: large;
+    text-align: center;
+}
+.imgDestaques{
+    height: 300px;
+    width: 300px;
+}
+.bordaDestaques{
+    border: var(--borda);
+    padding: 10px;
+}
+.textoP{
+    font-size: small;
+}
+.subtitulo{
+    font-size: 60px;
+    flex:1
+}
+@media screen and (max-width: 992px){
+    .info{ font-size: 60px; }
+    .ajuda{ font-size: 22px; }
+    .menu{ font-size: 14px; }
+    .conteudo{
+        flex-direction: column;
+        text-align: center;
+    }
+    .texto{
+        order: 1;
+        flex: none;
+    }
+    .destaque{
+        order: 2;
+    }
+    .texto h1{ font-size: 24px; }
+    .texto p{ font-size: 15px; }
+    .rodape{ font-size: 14px; }
+}
+@media screen and (max-width: 600px){
+    #head{
+        justify-content: center;
+    }
+    #head > div:not(:first-child){
+        display: none;
+    }
+    .imagem{
+        height: 50px;
+        width: 50px;
+    }
+    .menu{
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px;
+        gap: 10px;
+    }
+    .destaque{
+        width: 180px;
+        height: 180px;
+    }
+    .rodape{
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 10px;
+    }
+}
