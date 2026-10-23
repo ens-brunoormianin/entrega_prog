@@ -4,11 +4,14 @@
 }
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 body{
     background-color: black;
     color: white;
     margin: 0;
+    padding: 0;
     padding: 0 var(--margem);
     font-family: Arial, sans-serif;
 }
@@ -19,8 +22,8 @@ body{
     height: 150px;
 }
 .imagem{
-    height: 80px;
-    width: 80px;
+    width: clamp(50px, 8vw, 80px);
+    height: auto;
 }
 .info{
     font-size: 90px;
@@ -35,6 +38,7 @@ body{
     align-items: center;
     justify-content: space-around;
     height: 40px;
+    margin: 0 calc(-1 * var(--margem));
     background-color: rgb(255, 36, 36);
 }
 .menu a{
@@ -53,8 +57,9 @@ body{
     min-height: 300px;
 }
 .destaque{
-    width: 250px;
-    height: 250px;
+    width: clamp(120px, 25vw, 250px);
+    height: auto;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border: var(--borda);
 }
@@ -79,26 +84,81 @@ body{
 }
 .servicos{
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
+    gap: 15px;
     padding: 0 var(--margem);
     font-size: large;
     text-align: center;
 }
-.imgDestaques{
-    height: 300px;
-    width: 300px;
+.servicos + .servicos{
+    margin-top: 40px;
 }
 .bordaDestaques{
+    flex: 0 1 320px;
+    min-width: 0;
     border: var(--borda);
     padding: 10px;
+}
+.imgDestaques{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
 }
 .textoP{
     font-size: small;
 }
 .subtitulo{
     font-size: 60px;
-    flex:1
+    background-color: red;
+    color: white;
+    width: 100%;
+}
+.central{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 calc(-2 * var(--margem));
+    background-color: rgb(55, 54, 54);
+}
+.central p{
+    padding: 10px var(--margem);
+}
+.botaoOff{
+    border-radius: 50px;
+    height: 40px;
+    width: 100px;
+    align-self: center;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+}
+.grid div{
+    background-color: #010101;
+    border: 1px solid rgb(253, 248, 248);
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;      
+    justify-content: center;
+}
+.subtitulo2{
+    padding-top: 20px;
+    font-size: 50px;
+    justify-content: center;
+    flex: 1;
+}
+.mapa{
+    width: 100%;
+    aspect-ratio: 4 / 3; 
+    border: 0;
 }
 @media screen and (max-width: 992px){
     .info{ font-size: 60px; }
@@ -118,6 +178,9 @@ body{
     .texto h1{ font-size: 24px; }
     .texto p{ font-size: 15px; }
     .rodape{ font-size: 14px; }
+    .grid {
+        grid-template-columns: 1fr;  
+    }
 }
 @media screen and (max-width: 600px){
     #head{
@@ -145,5 +208,12 @@ body{
         height: auto;
         padding: 20px;
         gap: 10px;
+    }
+    .servicos{
+    flex-direction: column;
+    }
+    .bordaDestaques{
+    max-width: 100%;
+    width: 100%;
     }
 }
