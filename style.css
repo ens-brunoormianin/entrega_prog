@@ -153,12 +153,31 @@ body{
     padding-top: 20px;
     font-size: 50px;
     justify-content: center;
+    justify-self: center;
     flex: 1;
 }
 .mapa{
     width: 100%;
     aspect-ratio: 4 / 3; 
     border: 0;
+}
+.faq{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+.faqTitle{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+summary {
+  text-align: center;
 }
 @media screen and (max-width: 992px){
     .info{ font-size: 60px; }
